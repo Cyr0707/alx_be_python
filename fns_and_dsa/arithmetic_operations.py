@@ -26,10 +26,10 @@ def perform_operation(num1, num2, operation):
         return num1 * num2
     elif operation == 'divide':
         # Ensure we don't divide by zero
-        if num2 != 0:
-            return num1 / num2
-        else:
+        if num2 == 0:
             return "Error: Cannot divide by zero."
+        else:
+            return num1 / num2
     else:
         return "Error: Invalid operation specified. Use 'add', 'subtract', 'multiply', or 'divide'."
 
@@ -61,4 +61,3 @@ if __name__ == "__main__":
     # Example 6: Invalid operation
     result_invalid = perform_operation(5, 5, 'power')
     print(f"5 'power' 5 = {result_invalid}") # Expected: Error: Invalid operation specified...
-
