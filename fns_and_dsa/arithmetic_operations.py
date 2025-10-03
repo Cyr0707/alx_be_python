@@ -1,64 +1,64 @@
-# daily_reminder.py
-# Objective: Create a simplified Python script that uses conditional statements (if/match/case)
-# and loops to remind the user about a single, priority task based on time sensitivity.
+# arithmetic_operations.py
+# Objective: Implement a function to perform arithmetic operations based on user input.
 
-def create_reminder():
+def perform_operation(num1, num2, operation):
     """
-    Prompts the user for a task, its priority, and time-sensitivity, then prints a
-    customised reminder using match/case and if statements.
+    Performs a specific arithmetic operation (add, subtract, multiply, or divide) 
+    on two numbers based on the operation string.
+
+    Args:
+        num1 (float): The first number.
+        num2 (float): The second number.
+        operation (str): The desired operation ('add', 'subtract', 'multiply', 'divide').
+
+    Returns:
+        float or str: The result of the operation, or an error message.
     """
+    # Convert operation to lowercase for case-insensitive matching
+    operation = operation.lower().strip()
 
-    # 1. Prompt for a Single Task
-    task = input("Enter your task: ").strip()
-
-    # Prompt for priority and ensure it's one of the valid options (lowercased for matching)
-    valid_priorities = ["high", "medium", "low"]
-    while True:
-        priority_input = input("Priority (high/medium/low): ").strip().lower()
-        if priority_input in valid_priorities:
-            priority = priority_input
-            break
-        print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
-
-    # Prompt for time-bound status
-    valid_time_options = ["yes", "no"]
-    while True:
-        time_bound_input = input("Is it time-bound? (yes/no): ").strip().lower()
-        if time_bound_input in valid_time_options:
-            time_bound = time_bound_input
-            break
-        print("Invalid response. Please enter 'yes' or 'no'.")
-
-    # 2. Initialize and Process the Task Based on Priority using Match Case
-    # Define the default action phrase based on priority (used if not time-bound)
-    action_phrase = ""
-    match priority:
-        case "high":
-            action_phrase = "Focus on completing this task first."
-        case "medium":
-            action_phrase = "Plan to tackle this task soon."
-        case "low":
-            action_phrase = "Consider completing it when you have free time."
-        case _:
-            action_phrase = "Priority level could not be determined."
-
-    # 3. Use an if statement to modify the reminder for time-bound tasks, 
-    # and print the final output with an explicit structure to satisfy the validator.
-    
-    print() # Print a newline for clean output separation
-    
-    if time_bound == "yes":
-        # Time-bound tasks must include the strict required phrase
-        immediate_action_phrase = "that requires immediate attention today!"
-        print(f"Reminder: '{task}' is a {priority} priority task {immediate_action_phrase}")
-    elif priority == "low":
-        # Output for non-time-bound low priority tasks
-        print(f"Note: '{task}' is a {priority} priority task. {action_phrase}")
+    # Use conditional logic (if/elif/else) to perform the correct operation
+    if operation == 'add':
+        return num1 + num2
+    elif operation == 'subtract':
+        return num1 - num2
+    elif operation == 'multiply':
+        return num1 * num2
+    elif operation == 'divide':
+        # Ensure we don't divide by zero
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Error: Cannot divide by zero."
     else:
-        # Output for non-time-bound high/medium priority tasks
-        print(f"Reminder: '{task}' is a {priority} priority task. {action_phrase}")
+        return "Error: Invalid operation specified. Use 'add', 'subtract', 'multiply', or 'divide'."
 
-
-# Execute the main function
+# Example Usage:
 if __name__ == "__main__":
-    create_reminder()
+    
+    print("--- Arithmetic Operations Demo ---")
+
+    # Example 1: Addition
+    result_add = perform_operation(10, 5, 'add')
+    print(f"10 + 5 = {result_add}") # Expected: 15
+
+    # Example 2: Subtraction
+    result_subtract = perform_operation(20, 7, 'Subtract')
+    print(f"20 - 7 = {result_subtract}") # Expected: 13
+
+    # Example 3: Multiplication
+    result_multiply = perform_operation(4, 6, 'multiply')
+    print(f"4 * 6 = {result_multiply}") # Expected: 24
+
+    # Example 4: Division
+    result_divide = perform_operation(100, 4, 'DIVIDE')
+    print(f"100 / 4 = {result_divide}") # Expected: 25
+
+    # Example 5: Division by zero error handling
+    result_zero_div = perform_operation(9, 0, 'divide')
+    print(f"9 / 0 = {result_zero_div}") # Expected: Error: Cannot divide by zero.
+
+    # Example 6: Invalid operation
+    result_invalid = perform_operation(5, 5, 'power')
+    print(f"5 'power' 5 = {result_invalid}") # Expected: Error: Invalid operation specified...
+
