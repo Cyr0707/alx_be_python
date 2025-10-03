@@ -6,7 +6,7 @@
 def run_calculator():
     """
     Prompts the user for two numbers and an operation, then uses match-case 
-    to execute the calculation and display the result.
+    to execute the calculation and display the result immediately.
     """
     
     try:
@@ -25,41 +25,35 @@ def run_calculator():
         print("Invalid input. Please enter valid numbers.")
         return
 
-    result = None
-    message = ""
-
-    # 3. Perform the Calculation Using Match Case
+    # 3. Perform the Calculation and Output Using Match Case
     match operation:
         case '+':
             result = num1 + num2
-            # Updated message format
-            message = f"The result is {result}" 
+            # Output the Result directly
+            print(f"The result is {result}")
             
         case '-':
             result = num1 - num2
-            # Updated message format
-            message = f"The result is {result}"
+            # Output the Result directly
+            print(f"The result is {result}")
             
         case '*':
             result = num1 * num2
-            # Updated message format
-            message = f"The result is {result}"
+            # Output the Result directly
+            print(f"The result is {result}")
             
         case '/':
             # Handle division by zero gracefully
             if num2 == 0:
-                message = "Cannot divide by zero."
+                print("Cannot divide by zero.")
             else:
                 result = num1 / num2
-                # Updated message format
-                message = f"The result is {result}"
+                # Output the Result directly
+                print(f"The result is {result}")
                 
         case _:
             # Default case for unexpected operation input
-            message = f"Invalid operation '{operation}'. Please choose one of +, -, *, /."
-
-    # 4. Output the Result
-    print(message)
+            print(f"Invalid operation '{operation}'. Please choose one of +, -, *, /.")
 
 # Run the calculator function
 if __name__ == "__main__":
