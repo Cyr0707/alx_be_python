@@ -32,15 +32,18 @@ def run_calculator():
     match operation:
         case '+':
             result = num1 + num2
-            message = f"The result of {num1} + {num2} is {result}."
+            # Updated message format
+            message = f"The result is {result}" 
             
         case '-':
             result = num1 - num2
-            message = f"The result of {num1} - {num2} is {result}."
+            # Updated message format
+            message = f"The result is {result}"
             
         case '*':
             result = num1 * num2
-            message = f"The result of {num1} * {num2} is {result}."
+            # Updated message format
+            message = f"The result is {result}"
             
         case '/':
             # Handle division by zero gracefully
@@ -48,7 +51,8 @@ def run_calculator():
                 message = "Cannot divide by zero."
             else:
                 result = num1 / num2
-                message = f"The result of {num1} / {num2} is {result}."
+                # Updated message format
+                message = f"The result is {result}"
                 
         case _:
             # Default case for unexpected operation input
