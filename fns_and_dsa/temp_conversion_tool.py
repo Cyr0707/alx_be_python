@@ -3,9 +3,9 @@
 
 # Define Global Conversion Factors
 # The factor for converting Fahrenheit to Celsius: C = (F - 32) * (5/9)
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5.0 / 9.0
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 # The factor for converting Celsius to Fahrenheit: F = C * (9/5) + 32
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9.0 / 5.0
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
 def convert_to_celsius(fahrenheit):
     """
