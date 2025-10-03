@@ -1,41 +1,28 @@
 # weather_advice.py
+# Objective: Utilize conditional statements to guide program execution based on user input.
 
-# This script demonstrates the use of if, elif, and else statements 
-# to provide clothing recommendations based on user-provided weather conditions.
-
-def provide_weather_advice():
+def get_clothing_recommendation():
     """
-    Prompts the user for the current weather and prints a clothing recommendation 
-    based on conditional logic.
+    Prompts the user for the current weather (sunny, rainy, or cold)
+    and provides clothing recommendations using if/elif/else statements.
     """
-    
-    # 1. Prompt User for Weather Input
-    # Convert input to lowercase to ensure case-insensitive checking (e.g., 'Sunny' becomes 'sunny')
-    weather = input("What's the weather like today? (sunny/rainy/cold): ").lower()
-    
-    recommendation = ""
+    # Prompt User for Weather Input
+    weather_input = input("What's the weather like today? (sunny/rainy/cold): ")
 
-    # 2. Provide Clothing Recommendations using if-elif-else statements
+    # Normalize the input to lowercase and remove surrounding whitespace
+    weather = weather_input.lower().strip()
 
-    # Check for 'sunny'
+    # Provide Clothing Recommendations based on weather conditions
     if weather == "sunny":
-        recommendation = "Wear a t-shirt and sunglasses."
-    
-    # Check for 'rainy'
+        print("Wear a t-shirt and sunglasses.")
     elif weather == "rainy":
-        recommendation = "Don't forget your umbrella and a raincoat."
-        
-    # Check for 'cold'
+        print("Don't forget your umbrella and a raincoat.")
     elif weather == "cold":
-        recommendation = "Make sure to wear a warm coat and a scarf."
-        
-    # 3. Handle unexpected input using the else statement
+        print("Make sure to wear a warm coat and a scarf.")
     else:
-        recommendation = "Sorry, I don't have recommendations for this weather."
-        
-    # Output the recommendation
-    print(recommendation)
+        # Handle unexpected input
+        print("Sorry, I don't have recommendations for this weather.")
 
-# Execute the function
+# Execute the main function
 if __name__ == "__main__":
-    provide_weather_advice()
+    get_clothing_recommendation()
