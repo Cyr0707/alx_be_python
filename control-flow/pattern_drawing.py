@@ -10,9 +10,8 @@ def draw_square_pattern():
     size = -1
     while size <= 0:
         try:
-            # Use input() to get the size and cast it to an integer
-            size_input = input("Enter the size of the pattern (a positive integer): ")
-            size = int(size_input)
+            # Use input() to get the size and cast it to an integer in one line
+            size = int(input("Enter the size of the pattern: "))
 
             # Check if the number is positive
             if size <= 0:
