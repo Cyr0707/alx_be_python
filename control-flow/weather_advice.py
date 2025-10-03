@@ -20,7 +20,6 @@ def get_clothing_recommendation():
     elif weather == "cold":
         print("Make sure to wear a warm coat and a scarf.")
     else:
-        # Handle unexpected input
         print("Sorry, I don't have recommendations for this weather.")
 
 # Execute the main function
